@@ -1,20 +1,41 @@
 ---
-const base = import.meta.env.BASE_URL;
+import Container from '@/components/Container.astro';
+import Layout from '@/layouts/Layout.astro';
+import { CldImage } from 'astro-cloudinary';
+import { getCollection } from 'astro:content';
 
+
+const assets = await getCollection('assets');
+// console.log(assets);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
-  </head>
-  <body>
-	<a href={`${base}/`}>Home</a>
-	<a href={`${base}/about/`}>About</a>
-	<a href={`${base}/blog/`}>Blog</a>
-	<h1>My Astro Site</h1>
-  </body>
-</html>
+<Layout title={`Photowall`}>
+	<Container class="mt-12">
+	  <header class="mb-12">
+		<h1 class="text-5xl font-bold mb-12">
+		  { "test2" }
+		</h1>
+	  </header>
+	  <ul class="grid grid-cols-2 md:grid-cols-3 gap-5">
+		{assets.map(({ data: resource }) => {
+		  return (
+				<li>
+				  <a href={`${resource.secure_url}`}>
+					<CldImage
+					  width={1200}
+					  height={1200}
+					  src={resource.public_id}
+					  crop={{
+						source: true,
+						type: 'auto'
+					  }}
+					  alt=""
+					  sizes="(min-width: 768px) 33.33vw, 50vw"
+					/>
+				  </a>
+				</li>
+		  )
+		})}
+	  </ul>
+	</Container>
+  </Layout>
