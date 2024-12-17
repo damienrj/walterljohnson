@@ -7,8 +7,8 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://damienrj.github.io',
-  base: 'walterljohnson',
+  site: 'https://walterljohnson.com',
+  // base: 'walterljohnson',
   // output: 'hybrid',
   integrations: [tailwind()],
   // adapter: vercel(),
