@@ -1,21 +1,39 @@
 ---
-import { Astronav, MenuItems, MenuIcon,  Dropdown, DropdownItems } from "astro-navbar";
+import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, OpenIcon, CloseIcon} from "astro-navbar";
+
 import "../styles/global.css";
 ---
 
 <header class="lg:flex p-5 gap-5 justify-between items-center">
-  <Astronav>
+  <Astronav x-data="{ open: true }">
     <div class="flex w-full justify-between items-center">
-      <a class="text-2xl font-bold" href="/">Walter L Johnson Memorial</a>
+      <a class="text-2xl font-bold hover:text-blue-500" href="/">Walter L Johnson Memorial</a>
       <div class="block lg:hidden">
-        <MenuIcon class="w-4 h-4 text-gray-800" />
+        <button @click="open = !open" class="text-gray-80 focus:outline-none">
+          <MenuIcon class="w-6 h-6" />
+        </button>
       </div>
     </div>
-    <MenuItems class="hidden lg:flex lg:justify-center lg:items-center w-full">
+    <MenuItems :class="{ 'hidden': !open }" class="lg:flex lg:justify-center lg:items-center w-full">
       <ul class="flex flex-col lg:flex-row lg:gap-5">
-        <li><a href="/photo" class="text-lg font-medium hover:text-blue-500">Photos</a></li>
-        <li><a href="/stories" class="text-lg font-medium hover:text-blue-500">Stories</a></li>
-        <li><a href="/funeral-and-celebration" class="text-lg font-medium hover:text-blue-500">Funeral and Celebration of Life</a></li>
+        <li>
+          <a href="/photo" class="flex items-center gap-2 text-lg font-medium hover:text-blue-500">
+            <img src="/photos.svg" alt="Photos Icon" class="w-6 h-6" />
+            Photos
+          </a>
+        </li>
+        <li>
+          <a href="/stories" class="flex items-center gap-2 text-lg font-medium hover:text-blue-500">
+            <img src="/book.svg" alt="Stories Icon" class="w-6 h-6" />
+            Stories
+          </a>
+        </li>
+        <li>
+          <a href="/funeral-and-celebration" class="flex items-center gap-2 text-lg font-medium hover:text-blue-500">
+            <img src="/funeral.svg" alt="Funeral Icon" class="w-6 h-6" />
+            Funeral and Celebration of Life
+          </a>
+        </li>
       </ul>
     </MenuItems>
   </Astronav>
