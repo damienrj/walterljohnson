@@ -1,20 +1,31 @@
 ---
-import Container from '@/components/Container.astro';
-import Layout from '@/layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import Container from "@/components/Container.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
 
-const assets = await getCollection('assets');
+const assets = await getCollection("assets");
 // console.log(assets);
 ---
 
 <Layout title={`funeral-and-celebration`}>
-  <Container class="mt-12"> <!-- Add Container component with top margin -->
-    <div class="prose max-w-none"> <!-- Use prose class for text styling -->
-      <h1>
-        test2 
-      </h1>
-	    <p>Testing the css. Testing the css. Testing the css. Testing the css.</p>
+  <Container class="mt-12 flex justify-center">
+    <!-- Add Container component with top margin -->
+    <div class="prose max-w-aute">
+      <!-- Use prose class for text styling -->
+      <h1>Details for the Funeral and Celebration of Life</h1>
+      <p>
+        Details are still being worked out, but there will be a memorial service
+        at St Joe in Vancouver, WA on January 9th at 11 am. Afterwords there
+        will be a celebration of life.
+      </p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790.6220356039994!2d-122.60636463772987!3d45.61823897302645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a594517c563b%3A0xe8eb5709dca6193!2sSt.%20Joseph%20Catholic%20Church!5e0!3m2!1sen!2sus!4v1734412988362!5m2!1sen!2sus"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </Container>
 </Layout>
-

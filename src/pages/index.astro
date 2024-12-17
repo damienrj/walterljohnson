@@ -1,17 +1,39 @@
 ---
-import Container from '@/components/Container.astro';
-import Layout from '@/layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import Container from "@/components/Container.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { CldImage } from "astro-cloudinary";
+import { getEntry } from "astro:content";
 
-const assets = await getCollection('assets');
-// console.log(assets);
+const assets = await getCollection("assets");
+const asset = await getEntry("assets", "portrait");
 ---
 
 <Layout title={`Home`}>
-  <Container class="mt-12"> <!-- Add Container component with top margin -->
-    <div class="prose max-w-none"> <!-- Use prose class for text styling -->
-      <h2>Testing</h2>
-	  <p>Testing the css. Testing the css. Testing the css. Testing the css.</p>
-    </div>
-  </Container>
+	<Container class="mt-12 flex justify-center">
+		<!-- Add Container component with top margin and center alignment -->
+		<div class="prose max-w-none text-center">
+			<!-- Use prose class for text styling and center text -->
+			<h2>Walter L Johnson</h2>
+			<h3>March, 1948 - December, 2024</h3>
+			<p>
+				The Memorial Service and Celebration of Life will take place
+				Janurary 9th, at 11am. More details at the <a
+					href="/funeral-and-celebration"
+					>Funeral and Celebration of Life</a
+				> page. Please email <a href="mailto:damienrj+walter@gmail.com,"
+					>damienrj+walter@gmail.com</a> to RSVP and share stories and
+					thoughts about Walter.
+				
+			</p>
+			<div class="flex justify-center">
+				<CldImage
+					src={asset.data.public_id}
+					width={600}
+					height={600}
+					alt=""
+				/>
+			</div>
+		</div>
+	</Container>
 </Layout>

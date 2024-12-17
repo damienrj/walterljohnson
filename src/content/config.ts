@@ -6,7 +6,7 @@ export const collections = {
   assets: defineCollection({
     loader: cldAssetsLoader({
       limit: 99999,
-      folder: 'photowall/test'
+      folder: 'photowall/walter'
     })
   }),
 }
