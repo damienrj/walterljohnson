@@ -1,0 +1,10 @@
+h1 {
+    font-size: 3rem; /* text-5xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 3rem; /* mb-12 */
+  }
+  
+  /* For light gray background on all pages */
+body {
+    background-color: #D3D3D3;
+}

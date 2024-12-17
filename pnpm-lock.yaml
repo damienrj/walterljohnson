@@ -20,6 +20,9 @@ importers:
       astro-cloudinary:
         specifier: ^1.3.0
         version: 1.3.0(astro@4.16.17(@types/node@22.10.2)(rollup@4.28.1)(typescript@5.7.2))(jiti@1.21.6)(postcss@8.4.49)(typescript@5.7.2)(yaml@2.6.1)
+      astro-navbar:
+        specifier: ^2.3.9
+        version: 2.3.9
       cloudinary:
         specifier: ^2.5.1
         version: 2.5.1
@@ -927,6 +930,9 @@ packages:
     resolution: {integrity: sha512-0WDb6ipmFKLZE3lvPVmmD5tomoASJCjnCsCQ9VeLLJzQTa4NvHvtO2L36EQbP1jDwSRTBNZNnfahmztsFylDdw==}
     peerDependencies:
       astro: ^3.2.0 || ^4.0.0
+
+  astro-navbar@2.3.9:
+    resolution: {integrity: sha512-1FpVpVbOHlXT0vi/GvHb49y5LmH3yYcSO39pcyUDZ6eISjv/d3PlUg9C84h9o5TFxb4VzkSKfI+kvvMkCfHvEg==}
 
   astro@4.16.17:
     resolution: {integrity: sha512-OuD+BP7U6OqQLKtZ/FJkU2S+TOlifxS/OKUbZOb5p6y+LLBa1J3zHRJrIl7DUSq6eXY+9wSWwbJpD9JS+lqhxA==}
@@ -3328,6 +3334,8 @@ snapshots:
       - tsx
       - typescript
       - yaml
+
+  astro-navbar@2.3.9: {}
 
   astro@4.16.17(@types/node@22.10.2)(rollup@4.28.1)(typescript@5.7.2):
     dependencies:
