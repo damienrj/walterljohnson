@@ -10,7 +10,7 @@ const assets = await getCollection("assets");
 <Layout title={`funeral-and-celebration`}>
   <Container class="mt-12 flex justify-center">
     <!-- Add Container component with top margin -->
-    <div class="prose max-w-aute">
+    <div class="prose max-w-none">
       <!-- Use prose class for text styling -->
       <h1>Details for the Funeral and Celebration of Life</h1>
       <p>
@@ -18,14 +18,15 @@ const assets = await getCollection("assets");
         at St Joe in Vancouver, WA on January 9th at 11 am. Afterwords there
         will be a celebration of life.
       </p>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790.6220356039994!2d-122.60636463772987!3d45.61823897302645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a594517c563b%3A0xe8eb5709dca6193!2sSt.%20Joseph%20Catholic%20Church!5e0!3m2!1sen!2sus!4v1734412988362!5m2!1sen!2sus"
-        width="600"
-        height="450"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="relative w-full h-0 pb-[56.25%]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790.6220356039994!2d-122.60636463772987!3d45.61823897302645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a594517c563b%3A0xe8eb5709dca6193!2sSt.%20Joseph%20Catholic%20Church!5e0!3m2!1sen!2sus!4v1734412988362!5m2!1sen!2sus"
+          class="absolute top-0 left-0 w-full h-full"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
   </Container>
 </Layout>
