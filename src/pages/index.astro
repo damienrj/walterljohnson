@@ -4,6 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { CldImage } from "astro-cloudinary";
 import { getEntry } from "astro:content";
+import Eulogy from "./Eulogy.md";
 
 const assets = await getCollection("assets");
 const asset = await getEntry("assets", "portrait");
@@ -18,7 +19,7 @@ const asset = await getEntry("assets", "portrait");
 			<h3>March, 1948 - December, 2024</h3>
 			<p>
 				The Memorial Service and Celebration of Life will take place
-				Janurary 9th, at 11am. More details at the <a
+				Janurary 9th, at 11am. It will be livestreamed on Youtube.  More details at the <a
 					href="/funeral-and-celebration"
 					>Funeral and Celebration of Life</a
 				> page. Please email <a href="mailto:damienrj+walter@gmail.com,"
@@ -26,13 +27,25 @@ const asset = await getEntry("assets", "portrait");
 					thoughts about Walter.
 				
 			</p>
-			<div class="flex justify-center">
+			<div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
 				<CldImage
 					src={asset.data.public_id}
 					width={600}
 					height={600}
 					alt=""
 				/>
+				<iframe
+				  width="600"
+				  height="450"
+				  src="https://www.youtube.com/embed/NAJOkaaV0LY?si=Ztv3F2XL1sIMT5HM"
+				  title="YouTube video player"
+				  frameborder="0"
+				  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				  referrerpolicy="strict-origin-when-cross-origin"
+				  allowfullscreen></iframe>
+			</div>
+				<div id="eulogy" class="mt-8 p-4 border border-gray-300 bg-gray-200 text-left font-garamond">
+				<Eulogy />
 			</div>
 		</div>
 	</Container>

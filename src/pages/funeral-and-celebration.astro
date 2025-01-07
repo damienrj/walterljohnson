@@ -2,8 +2,11 @@
 import Container from "@/components/Container.astro";
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { CldImage } from "astro-cloudinary";
+import { getEntry } from "astro:content";
 
 const assets = await getCollection("assets");
+const asset = await getEntry("assets", "PXL_20230902_233857805.MP_jb9zkp");
 // console.log(assets);
 ---
 
@@ -14,11 +17,29 @@ const assets = await getCollection("assets");
       <!-- Use prose class for text styling -->
       <h1>Details for the Funeral and Celebration of Life</h1>
       <p>
-        Details are still being worked out, but there will be a memorial service
-        at St Joe in Vancouver, WA on January 9th at 11 am. Afterwords there
-        will be a celebration of life.
+        The memorial service was held St Joe in Vancouver, WA on January 9th at 11 am. Walter did not like dark colors
+        and we encouraged everyone to dress in bright colors!
       </p>
-      <div class="relative w-full h-0 pb-[56.25%]">
+      <div class="flex justify-center mb-8">
+        <iframe
+          width="600"
+          height="450"
+          src="https://www.youtube.com/embed/FbhHnIJbGo0?si=PKo3rn5FDZXLD-E5"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+      <div class="flex justify-center mb-8">
+        <CldImage
+          src={asset.data.public_id}
+          width={600}
+          height={600}
+          alt=""
+        />
+      </div>
+      <div class="relative w-full max-w-[800px] h-0 pb-[56.25%] mx-auto">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790.6220356039994!2d-122.60636463772987!3d45.61823897302645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495a594517c563b%3A0xe8eb5709dca6193!2sSt.%20Joseph%20Catholic%20Church!5e0!3m2!1sen!2sus!4v1734412988362!5m2!1sen!2sus"
           class="absolute top-0 left-0 w-full h-full"
